@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+
 /**
  * main - this is the main func
  *
@@ -7,12 +8,12 @@
  */
 int main(void)
 {
-	int nunm = 0;
+	int x = 0;
 
-	for (num = 0; num <= 9; num++)
+	for (x = 0; x <= 9; x++)
 	{
-		putchar(num % 10 + '0');
-		if (num != 9)
+		putchar(x % 10 + '0');
+		if (x != 9)
 		{
 			putchar(',');
 			putchar(' ');
