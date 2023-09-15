@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int num = 0;
+	int num = 1;
 
 	while (num <= 100)
 	{
@@ -26,7 +26,7 @@ int main(void)
 		{
 			printf("%d", num);
 		}
-		
+
 		if (num < 100)
 		{
 			putchar(' ');
