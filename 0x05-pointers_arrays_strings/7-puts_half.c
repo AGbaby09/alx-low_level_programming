@@ -17,16 +17,22 @@ void puts_half(char *str)
 	if (count % 2 != 0)
 	{
 		half = (count - 1) / 2;
+
+		while (half < count)
+		{
+			_putchar(str[half]);
+			half++;
+		}
 	}
 	else
 	{
 		half = count / 2;
-	}
 
-	while (half < count)
-	{
-		_putchar(str[half]);
-		half++;
+		while (half < count)
+		{
+			_putchar(str[half]);
+			half++;
+		}
 	}
 	_putchar('\n');
 }
