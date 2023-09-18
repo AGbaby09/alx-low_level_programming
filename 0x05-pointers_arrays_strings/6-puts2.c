@@ -11,7 +11,7 @@ void puts2(char *str)
 
 	while (str[letter] != '\0')
 	{
-		letter ++;
+		letter++;
 	}
 
 	while (letter2 < letter)
