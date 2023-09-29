@@ -1,58 +1,29 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#define UNUSED(x) (void)(x)
 /**
- * StringCheck - checks string
- * @s: string to check
- * Return: boolean
+ * main - main funct
+ * @argc: param count
+ * @argv: param poiter
+ * Return: int
  */
-int StringCheck(char *s)
+int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i, j, sum = 0;
 
-	for (; s[i] != '\0'; i++)
+	for (i = 1; i < argc; i++)
 	{
-		if (!isdigit(s[i]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			return (0);
-		}
-	}
-	return (1);
-}
-/**
- * main - main function
- * @argc: argumentc
- * @argv: vector of arguments
- *Return: always 0
- */
-int main(int argc, char  *argv[])
-{
-	int i;
-	int result = 0;
-
-	if (argc > 1)
-	{
-		for (i = 1; i < argc; i++)
-		{
-			if (StringCheck(argv[i]))
-			{
-				result += atoi(argv[i]);
-			}
-			else
+			if (!isdigit(argv[i][j]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		printf("%d\n", result);
-		return (0);
+		sum += atoi(argv[i]);
 	}
-	else
-	{
-		printf("%d\n", 0);
-		return (1);
-	}
-
+	printf("%d\n", sum);
+	return (0);
 }
+
