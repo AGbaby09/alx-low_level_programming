@@ -1,44 +1,50 @@
 #include "main.h"
+
 /**
- * argstostr - gives array of args
- * @ac: argument count
- * @av: array of arguments
- * Return: char value
+ * argstostr - my function
+ *
+ * @ac : size of memory to be reserved
+ * @av : character
+ * Return: char
  */
 char *argstostr(int ac, char **av)
 {
-	int size;
-	char *s;
-	int i;
-	int j;
-	int k;
+	int i = 0, j = 0, count = 0, a = 0, b = 0, c = 0;
+
+	char *p;
 
 	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			size++;
+		return (NULL);
 	}
 
-	size += (ac + 1);
-	s = malloc(sizeof(char) * size);
-	if (s == NULL)
-		return (NULL);
-	k = 0;
-	for (i = 0; i < ac; i++)
+	while (i < ac)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		while (av[i][j] != '\0')
 		{
-			s[k] = av[i][j];
-			k++;
+			count++;
+			j++;
 		}
-		s[k] = '\n';
-		k++;
+		j = 0;
+		i++;
 	}
+	p = (char *) malloc((sizeof(char) * count) + ac + 1);
 
-	s[k] = '\0';
+	while (av[a])
+	{
+		while (av[a][b])
+		{
+			*(p + c) = av[a][b];
+			c++;
+			b++;
+		}
+		*(p + c) = '\n';
+		b = 0;
+		c++;
+		a++;
+	}
+	c++;
+	*(p + c) = '\0';
 
-	return (s);
+	return (p);
 }
