@@ -1,32 +1,25 @@
-#ifndef LINKED_LIST
-#define LINKED_LIST
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+#ifndef LISTS_H
+#define LISTS_H
+#include <stddef.h>
+int _putchar(char c);
 /**
- * struct node - singly linked list
+ * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- * for alx project
+ * for Holberton project
  */
-typedef struct node
+typedef struct list_s
 {
 	char *str;
 	unsigned int len;
-	struct node *next;
-}
-list_t;
-
-int _putchar(char c);
-int _strlen(const char *s);
+	struct list_s *next;
+} list_t;
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
-#endif /* MAIN_H */
+#endif
