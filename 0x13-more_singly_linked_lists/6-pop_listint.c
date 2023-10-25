@@ -1,20 +1,20 @@
 #include "lists.h"
+
 /**
- * pop_listint - pops a node out
- * @head: linked list address
- * Return: head node data
+ * pop_listint - ..
+ *
+ * @head: ...
+ * Return: ...
  */
 int pop_listint(listint_t **head)
 {
-	int value = 0;
-	listint_t *tmp;
+int value;
+listint_t *temp = *head;
 
-	if (*head == NULL)
-		return (value);
-	tmp = *head;
-	value = tmp->n;
-	free(*head);
-	*head = tmp->next;
-
-	return (value);
+if (head == NULL || *head == NULL)
+return (0);
+*head = (*head)->next;
+value = temp->n;
+free(temp);
+return (value);
 }
